@@ -45,6 +45,24 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- 用JSP作模板要添加的，否则会显示jsp源码，无法解释为html -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!--  JSTL -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- mybatis-plus -->
+        <dependency>
+    		<groupId>com.baomidou</groupId>
+    		<artifactId>mybatis-plus-boot-starter</artifactId>
+    		<version>3.1.1</version>
+		</dependency>
     </dependencies>
 
     <build>
