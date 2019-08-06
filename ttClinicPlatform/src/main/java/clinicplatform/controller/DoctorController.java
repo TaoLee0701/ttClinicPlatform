@@ -6,19 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
+import clinicplatform.biz.DoctorBiz;
 import clinicplatform.entity.Doctor;
 
 @Controller
 public class DoctorController {
 	
 	@Autowired
-	private Doctor doctorBiz;
+	private DoctorBiz doctorBiz;
 	
 	
 	
 	@RequestMapping("login")
 	public String login(Model model,String username,String pwd) {
 		
+		Doctor loginDoctor=doctorBiz.checkLogin(username, pwd);
 		
 		
 		return "login";
