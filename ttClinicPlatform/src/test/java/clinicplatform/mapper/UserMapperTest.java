@@ -22,7 +22,7 @@ public class UserMapperTest {
 		QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
 		queryWrapper.eq("user_id", 1);
 		User user=userMapper.selectOne(queryWrapper);
-		System.out.println(user.getUserName());
+		System.out.println(user);
 	}
 
 }
