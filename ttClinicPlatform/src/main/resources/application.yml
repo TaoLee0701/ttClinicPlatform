@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ttClinicPlatform?serverTimezone=GMT%2B8
     username: root
-    password: 1234
+    password: HMX520QQ012014
 
 mybatis-plus:
   # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
@@ -12,3 +12,4 @@ mybatis-plus:
   type-aliases-package: clinicplatform.entity
   
 logging.level.mycinema.mapper: debug   #显示项目中的Mapper调试日志
+
