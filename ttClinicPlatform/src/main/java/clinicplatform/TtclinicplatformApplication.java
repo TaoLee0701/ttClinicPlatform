@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("clinicplatform.mapper")
 public class TtclinicplatformApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(TtclinicplatformApplication.class, args);
     }
-
 }
