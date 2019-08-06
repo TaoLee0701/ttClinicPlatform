@@ -10,14 +10,15 @@ import clinicplatform.biz.UserBiz;
 import clinicplatform.entity.User;
 
 @Controller
+@RequestMapping("clinicback")
 public class LoginController {
 
 	@Autowired
 	private UserBiz userBiz;
-	
+
 	@RequestMapping("/login")
 	@ResponseBody
-	public String Login(Model model,String loginName) {
+	public String login(Model model,String loginName) {
 		User user = userBiz.fetchAdministrators(loginName);
 		if(user==null) {
 			model.addAttribute("erroMess","您不是诊所管理员");
