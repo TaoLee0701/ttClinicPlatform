@@ -10,20 +10,21 @@ import clinicplatform.biz.DoctorBiz;
 import clinicplatform.entity.Doctor;
 
 @Controller
+@RequestMapping("doctor")
 public class DoctorController {
-	
+
 	@Autowired
 	private DoctorBiz doctorBiz;
-	
-	
-	
+
+
+
 	@RequestMapping("login")
 	public String login(Model model,String username,String pwd) {
-		
+
 		Doctor loginDoctor=doctorBiz.checkLogin(username, pwd);
-		
-		
+
+
 		return "login";
 	}
-	
+
 }
