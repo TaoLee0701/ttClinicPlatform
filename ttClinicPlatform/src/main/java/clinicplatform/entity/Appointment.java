@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Appointment {
-
 	//预约记录表
 	private Integer aId; 
 	private int  pId;   //就诊人Id

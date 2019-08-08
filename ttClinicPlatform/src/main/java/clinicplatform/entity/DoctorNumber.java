@@ -2,9 +2,7 @@ package clinicplatform.entity;
 
 import java.sql.Date;
 
-public class doctorNumber {
-
-
+public class DoctorNumber {
 	private int docnId; 
 	private int hddId;  	//医生
 	private int docnNum;  	//剩余多少号
