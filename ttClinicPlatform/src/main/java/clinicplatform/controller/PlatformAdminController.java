@@ -1,11 +1,9 @@
 package clinicplatform.controller;
 
+import clinicplatform.entity.Doctor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @RequestMapping("platformAdmin")
@@ -15,17 +13,14 @@ public class PlatformAdminController {
     public String index(){
         return  "platform-admin/index";
     }
+    @RequestMapping("login")
+    public String login(){
+        return  "platform-admin/login";
+    }
     @RequestMapping("user")
     @ResponseBody
-    public Map<String,String> user(Integer id){
+    public Doctor user(Integer id){
         System.out.println(id);
-        Map<String,String> map=new HashMap<>();
-        map.put("1","1");
-        map.put("2","2");
-        map.put("3","3");
-        map.put("4","4");
-        map.put("5","5");
-        return  map;
+        return  new Doctor(1,"李gay问","123","12345667848","http://asba","广州","ssssss");
     }
-
 }
