@@ -5,26 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import clinicplatform.biz.UserBiz;
 import clinicplatform.entity.User;
+import clinicplatform.mapper.RoleMapper;
 import clinicplatform.mapper.UserMapper;
 
 @Service
 public class UserBizimpl implements UserBiz{
 
 	@Autowired
-	private UserMapper usermapper;
+	private UserMapper userMapper;
+	@Autowired
+	private RoleMapper roleMapper;
 
 	@Override
-	public List<User> findAdministrators(String name, String phone, String password) {
-		// TODO Auto-generated method stub
-		return usermapper.findAdministrators(name, phone, password);
-	}
-
-	@Override
-	public User fetchAdministrators(String loginName) {
-		// TODO Auto-generated method stub
-		return usermapper.fetchAdministrators(loginName);
+	public User checkUserNameOrUserPhone(String loginName) {
+		QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+		queryWrapper.eq("user_name", loginName);
+		queryWrapper.or().eq("user_phone", loginName);
+		User user =userMapper.selectOne(queryWrapper);
+		user.setRoles(roleMapper.fetchByUserRoleId(user.getUserId()));
+		return user;
 	}
 
 	

@@ -1,5 +1,9 @@
 package clinicplatform.entity;
 
+import java.util.List;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,4 +24,5 @@ public class Hospital {
 	private String hospitalLat;
 	private double hospitalScore;
 	private int hospitalState;
+	private List<String> hiImage;
 }

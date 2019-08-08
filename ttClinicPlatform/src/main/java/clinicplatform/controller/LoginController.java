@@ -19,10 +19,7 @@ public class LoginController {
 	@RequestMapping("/login")
 	@ResponseBody
 	public String login(Model model,String loginName) {
-		User user = userBiz.fetchAdministrators(loginName);
-		if(user==null) {
-			model.addAttribute("erroMess","您不是诊所管理员");
-		}
+		
 		return "/login";
 	}
 }
