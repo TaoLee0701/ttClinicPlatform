@@ -10,7 +10,7 @@ input, select, option, textarea, button {
 	* {
     -webkit-tap-highlight-color: rgba(180,180,180,0.2);
 }
-a {
+a{
     color: #333;
     text-decoration: none;
 }
@@ -151,5 +151,15 @@ color:#999;
 .login-cont li input{ border: none; line-height: 4rem; width: 100%; outline: 0;}
 .login-cont{ margin: 0 2rem; line-height: 4rem;}
 #click{ position: absolute; right: 0; top: 50%; margin-top: 0.5rem; transform: translate(0,-50%)}
-.button{background: #10a78e; color: #fff; border-radius:2rem; height: 4rem; line-height: 4rem; font-size: 1.6rem; margin-top: 4rem;}
+.button{
+	width:100%;
+	background: #10a78e;
+	 color: #fff;
+	  border-radius:2rem;
+	   height: 4rem;
+	    line-height: 4rem;
+	     font-size: 1.6rem;
+	      margin-top: 4rem;
+	      border: none;
+	      	      }
 	
