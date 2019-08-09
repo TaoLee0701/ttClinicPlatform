@@ -3,15 +3,15 @@
 
 # Log file
 *.log
-iview
+
 
 # BlueJ files
 *.ctxt
-iview
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-iview
+
 
 # Package Files #
 *.jar
@@ -21,7 +21,7 @@ iview
 *.zip
 *.tar.gz
 *.rar
-iview
+
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
