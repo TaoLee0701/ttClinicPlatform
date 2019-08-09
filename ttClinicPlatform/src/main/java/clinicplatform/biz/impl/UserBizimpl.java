@@ -26,7 +26,8 @@ public class UserBizimpl implements UserBiz{
 		queryWrapper.eq("user_name", loginName);
 		queryWrapper.or().eq("user_phone", loginName);
 		User user =userMapper.selectOne(queryWrapper);
-		user.setRoles(roleMapper.fetchByUserRoleId(user.getUserId()));
+		if(user!=null)
+			user.setRoles(roleMapper.fetchByUserRoleId(user.getUserId()));
 		return user;
 	}
 

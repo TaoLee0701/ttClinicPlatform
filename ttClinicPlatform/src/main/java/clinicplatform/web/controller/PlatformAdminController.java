@@ -1,4 +1,4 @@
-package clinicplatform.controller;
+package clinicplatform.web.controller;
 
 import clinicplatform.entity.Doctor;
 import org.springframework.stereotype.Controller;
@@ -6,18 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("platformAdmin")
+@RequestMapping("/platformAdmin")
 public class PlatformAdminController {
 
-    @RequestMapping("index")
-    public String index(){
-        return  "platform-admin/index";
-    }
-    @RequestMapping("login")
+    
+    @RequestMapping("/login")
     public String login(){
         return  "platform-admin/login";
     }
-    @RequestMapping("user")
+    @RequestMapping("/user")
     @ResponseBody
     public Doctor user(Integer id){
         System.out.println(id);

@@ -21,7 +21,7 @@ public class UserBizimplTest {
 	
 	@Test
 	public void testCheckUserAdmin() {
-		User user =userBiz.checkUserNameOrUserPhone("15914218841");
+		User user =userBiz.checkUserNameOrUserPhone("");
 		System.out.println(user);
 	}
 

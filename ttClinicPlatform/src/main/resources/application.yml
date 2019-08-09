@@ -4,8 +4,7 @@ spring:
     url: jdbc:mysql://localhost:3306/ttClinicPlatform?serverTimezone=GMT%2B8
     username: root
     password: 1234
-  #视图配置
-  mvc:
+  mvc: #视图配置
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
@@ -14,6 +13,7 @@ mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   type-aliases-package: clinicplatform.entity
+
 
 logging.level.clinicplatform.mapper: debug   #显示项目中的Mapper调试日志
 

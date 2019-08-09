@@ -1,4 +1,4 @@
-package clinicplatform.controller;
+package clinicplatform.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,12 +10,11 @@ import clinicplatform.biz.DoctorBiz;
 import clinicplatform.entity.Doctor;
 
 @Controller
-@RequestMapping("doctor")
+@RequestMapping("/doctor")
 public class DoctorController {
 
 	@Autowired
 	private DoctorBiz doctorBiz;
-
 
 
 	@RequestMapping("login")
