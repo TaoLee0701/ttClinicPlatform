@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+iview
 
 ### STS ###
 .apt_generated
@@ -12,6 +13,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+iview
 
 ### IntelliJ IDEA ###
 .idea
@@ -30,3 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
+iview
