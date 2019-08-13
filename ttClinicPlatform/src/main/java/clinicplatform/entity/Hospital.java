@@ -24,5 +24,6 @@ public class Hospital {
 	private String hospitalLat;
 	private double hospitalScore;
 	private int hospitalState;
+	@TableField(exist=false)
 	private List<String> hiImage;
 }

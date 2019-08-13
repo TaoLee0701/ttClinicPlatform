@@ -14,11 +14,11 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 	/**
      * 重写登录地址
      */
+	
 	@Override
 	protected void redirectToLogin(ServletRequest request, ServletResponse response) throws IOException {
 		 HttpServletRequest req = (HttpServletRequest) request;
 	     String loginUrl = getLoginUrl();
-	     
 	     String url = req.getRequestURI();
 	     
 	     if (url.contains("/doctor/")) {
