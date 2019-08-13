@@ -21,6 +21,13 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 	     String loginUrl = getLoginUrl();
 	     String url = req.getRequestURI();
 	     
+	     if (url.contains("/doctor/")) {
+	    	 loginUrl = "/home/doctor-login";
+	     }else if(url.contains("/ttPlatform/")) {
+	    	 loginUrl = "/home/platform-login";
+	     }else if(url.contains("/clinicback/")) {
+	    	 loginUrl = "/home/clinicback-login";
+	     }
 	     
 	     WebUtils.issueRedirect(request, response, loginUrl);
 
