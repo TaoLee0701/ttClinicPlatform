@@ -69,4 +69,3 @@ public class ShiroConfig {
 	}
 
 }
->>>>>>> refs/heads/test
