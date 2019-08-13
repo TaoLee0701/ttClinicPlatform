@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,4 +17,5 @@ mybatis-plus:
 
 
 logging.level.clinicplatform.mapper: debug   #显示项目中的Mapper调试日志
-
+server:
+  port: 1080
