@@ -7,6 +7,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,16 +27,16 @@ public class LoginController {
 	
 	
 	@RequestMapping("/login")
-	public String login(Model model,String loginName,String password) {
+	@ResponseBody
+	public String login(@RequestBody User user) {
 		Subject subject = SecurityUtils.getSubject();//拿到当前跟程序互交的用户
-		UsernamePasswordToken token = new UsernamePasswordToken(loginName, password);
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getUserPassword());
 		try {
 			subject.login(token);
-			subject.getSession().setAttribute("loginUser", userBiz.checkUserNameOrUserPhone(loginName));
-			return "redirect:/index";
+			subject.getSession().setAttribute("loginUser", userBiz.checkUserNameOrUserPhone(user.getUserName()));
+			return "成功";
 		} catch (AuthenticationException ex) {
-			model.addAttribute("error", "用户名或密码错误");
-			return "/home/clinicback-login";
+			return "失败";
 		}
 	}
 }
