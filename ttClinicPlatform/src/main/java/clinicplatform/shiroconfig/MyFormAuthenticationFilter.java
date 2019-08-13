@@ -22,7 +22,7 @@ public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
 
 	     if (url.contains("/doctor/")) {
 	    	 loginUrl = "/home/doctor-login";
-	     }else if(url.contains("/platformAdmin/")) {
+	     }else if(url.contains("/ttPlatform/")) {
 	    	 loginUrl = "/home/platform-login";
 	     }else if(url.contains("/clinicback/")) {
 	    	 loginUrl = "/home/clinicback-login";
