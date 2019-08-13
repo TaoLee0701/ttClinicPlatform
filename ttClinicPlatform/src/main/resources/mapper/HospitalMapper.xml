@@ -7,4 +7,10 @@
 	<select id="fetchAvgScore" parameterType="int" resultType="double">
 		SELECT AVG(h_num) FROM hospital_score WHERE h_id=1
 	</select>
+	<select id="findByTopScoreAndAddress" parameterType="String" resultType="Hospital">
+		select * from Hospital where hospital_address like concat('%',#{adderss},'%') 
+		and hospital_state=2
+		order By hospital_score desc 
+		limit 0,10
+	</select>
 </mapper>

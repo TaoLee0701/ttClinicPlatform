@@ -74,6 +74,194 @@
 						<span slot="left">左边内容二</span>
 						<span slot="right">内容</span>
 					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
+					
+					<yd-cell-item >
+						<span slot="left">左边内容一</span>
+						<span slot="right">评分	：&nbsp;&nbsp;</span>
+						<yd-rate slot="right" v-model="rate3" :readonly="true" color="#00FF16"  active-color="#00FF16" >
+						</yd-rate>
+						<span slot="right"> 7.0</span>
+					</yd-cell-item>
+					<yd-cell-item>
+						<span slot="left">左边内容二</span>
+						<span slot="right">内容</span>
+					</yd-cell-item>
 				</yd-cell-group>
 			</div>
 		</slot>

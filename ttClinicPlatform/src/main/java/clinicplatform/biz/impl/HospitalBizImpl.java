@@ -23,11 +23,23 @@ public class HospitalBizImpl implements HospitalBiz {
 		qw.like("hospital_name", "%"+name+"%");
 		List<Hospital> hospitals = hospitalMapper.selectList(qw);
 		
-		if(!hospitals.isEmpty())
-			hospitals.forEach(h -> h.setHospitalScore(hospitalMapper.fetchAvgScore(h.getHospitalId())));
-		else
+		if(hospitals.isEmpty())
 			hospitals=null;
 		return hospitals;
+	}
+
+	@Override
+	public List<Hospital> findByTopScoreAndAddress(String address) {
+		
+		return hospitalMapper.findByTopScoreAndAddress(address);
+	}
+
+	@Override
+	public Hospital fetchById(int hId) {
+		QueryWrapper<Hospital> qw = new QueryWrapper<>();
+		qw.eq("hospital_id", hId);
+		
+		return hospitalMapper.selectOne(qw);
 	}
 
 }
