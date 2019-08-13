@@ -1,10 +1,13 @@
 package clinicplatform.web.controller;
 
+import clinicplatform.entity.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,11 +20,13 @@ public class PlatformAdminController {
         return  "platform-admin/login";
     }
 
-    @RequestMapping("/check-login")
+    @PostMapping("/check-login")
     @ResponseBody
-    public String login(String userName, String password) {
+    public String login(@RequestBody User user) {
+        System.out.println("user:"+user);
         Subject subject = SecurityUtils.getSubject();//拿到当前跟程序互交的用户
-        UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getUserPassword());
+
         try {
             subject.login(token);
             subject.getSession().setAttribute("ttadmin","ttadmin");

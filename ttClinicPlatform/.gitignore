@@ -3,7 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-iview
+/iview
 
 ### STS ###
 .apt_generated
@@ -13,14 +13,14 @@ iview
 .settings
 .springBeans
 .sts4-cache
-iview
+/iview
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-iview
+/iview
 
 ### NetBeans ###
 /nbproject/private/
@@ -29,7 +29,8 @@ iview
 /nbdist/
 /.nb-gradle/
 build/
+/iview
 
 ### VS Code ###
 .vscode/
-iview
+/iview
