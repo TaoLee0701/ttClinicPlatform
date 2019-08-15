@@ -28,11 +28,11 @@
             width: 30%;
             margin: 0 auto;
             position: relative; /*脱离文档流*/
-            top: 50%; /*偏移*/
+            top: 40%; /*偏移*/
             transform: translateY(-50%);
 
         }
-        .platform-login .form{
+        .platform-login>.form{
             text-align: center;
             padding: 2rem;
             border: 1px solid #dcdee2;
@@ -40,14 +40,14 @@
             -moz-box-shadow: 1px 2px 6px #dcdee2; /* 老的 Firefox */
             box-shadow: 1px 2px 6px #dcdee2;
         }
-        .platform-login .form div{
-            margin: 0.3rem;
+        .platform-login>.form>div{
+            margin: 1rem;
         }
-        .platform-login .form div button{
+        .platform-login>.form>div>button{
             width: 10rem;
             border-radius: 2rem;
         }
-        .platform-login .form div button span{
+        .platform-login>.form>div>button>span{
             font-size: 0.9rem;
             font-weight: bold;
         }
@@ -58,14 +58,27 @@
         <div class="form">
             <h1>涛涛诊所平台管理登录</h1>
             <div>
-                <i-input v-model="user_name" type="text" clearable placeholder="请输入用户名" style="width: 300px">
-                    <Icon type="ios-contact" slot="prefix" />
-                </i-input>
+                <Tooltip placement="top" always theme="light" content="用户名不能为空哦！" :disabled="false">
+                    <i-input prefix="ios-contact" v-model="user_name" type="text" clearable placeholder="请输入用户名" style="width: 18.75rem"></i-input>
+                </Tooltip>
             </div>
             <div>
-                <i-input v-model="password" type="password" clearable placeholder="请输入密码" style="width: 300px">
-                    <Icon type="md-calculator"  slot="prefix"/>
-                </i-input>
+                <Tooltip placement="top" always theme="light" content="密码不能为空哦！" :disabled="false">
+                    <i-input prefix="md-calculator" v-model="password" type="password" clearable placeholder="请输入密码" style="width: 300px"></i-input>
+                </Tooltip>
+            </div>
+            <div>
+                <div style="text-align: left;width: 18.75rem;margin: 0 auto;">
+                    <Row>
+                        <i-col span="20">
+                                <Checkbox v-model="keepPassword">记住密码</Checkbox>
+                                <Checkbox v-model="autoLogin">一周内自动登录</Checkbox>
+                        </i-col >
+                        <i-col  span="4" @click.native="forgetPassword">忘记密码</i-col >
+                    </Row>
+
+                    <%--<span>忘记密码</span>--%>
+                </div>
             </div>
             <div>
                 <i-button type="info" @click="submit" :loading="loading">
@@ -81,13 +94,21 @@
         data: {
             user_name:'',
             password:'',
-            loading:false
+            loading:false,
+            keepPassword:false,
+            autoLogin:false
         },
         methods: {
             submit(){
-                // this.$Spin.show();
                 this.loading=true
-                console.log("submit",this.user_name,this.password)
+                console.log("keepPassword",this.keepPassword)
+                console.log("autoLogin",this.autoLogin)
+                location.href="/ttPlatform/login"
+                // console.log("submit",this.user_name,this.password)
+                this.loading=false
+            },
+            forgetPassword(){
+                console.log("忘记密码")
             }
         }
     })
