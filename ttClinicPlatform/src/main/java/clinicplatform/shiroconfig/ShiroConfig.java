@@ -1,5 +1,11 @@
 package clinicplatform.shiroconfig;
 
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import javax.servlet.Filter;
+
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -8,13 +14,9 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.servlet.Filter;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @Configuration
 public class ShiroConfig {
-
+	
 	// 设置权限提供程序Realm
 	@Bean
 	public Realm realm() {
@@ -35,7 +37,7 @@ public class ShiroConfig {
 	@Bean
 	public ShiroFilterFactoryBean shiroFilterFactoryBean() {
 		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-
+		
 		// 获取filters
         Map<String, Filter> filters = shiroFilterFactoryBean.getFilters();
         // 将自定义的FormAuthenticationFilter注入shiroFilter中
@@ -46,17 +48,27 @@ public class ShiroConfig {
         // 拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         filterChainDefinitionMap.put("/home/**", "anon");
-		filterChainDefinitionMap.put("/ttPlatform/login", "anon");
+        
+        filterChainDefinitionMap.put("/ttPlatform/login", "anon");
         filterChainDefinitionMap.put("/ttPlatform/check-login", "anon");
+        
         filterChainDefinitionMap.put("/clinicback/**", "anon");
+
+        filterChainDefinitionMap.put("/doctor/**", "anon");
+
+        filterChainDefinitionMap.put("/patient/index", "anon");
+        filterChainDefinitionMap.put("/hospital/**", "anon");
+        filterChainDefinitionMap.put("/error", "anon");
+
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
-        
+
         filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setLoginUrl("/login.html");
+        
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-
-
+		
+		
 		return shiroFilterFactoryBean;
 	}
 
