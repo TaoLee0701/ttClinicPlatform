@@ -48,9 +48,11 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/home/**", "anon");
 		filterChainDefinitionMap.put("/ttPlatform/login", "anon");
         filterChainDefinitionMap.put("/ttPlatform/check-login", "anon");
+        filterChainDefinitionMap.put("/clinicback/login", "anon");
+        filterChainDefinitionMap.put("/clinicback/login", "anon");
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
-
+        
         filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setLoginUrl("/login.html");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
