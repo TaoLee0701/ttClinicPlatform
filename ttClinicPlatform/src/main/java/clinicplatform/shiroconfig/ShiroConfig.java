@@ -48,8 +48,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/home/**", "anon");
 		filterChainDefinitionMap.put("/ttPlatform/login", "anon");
         filterChainDefinitionMap.put("/ttPlatform/check-login", "anon");
-        filterChainDefinitionMap.put("/clinicback/login", "anon");
-        filterChainDefinitionMap.put("/clinicback/login", "anon");
+        filterChainDefinitionMap.put("/clinicback/**", "anon");
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         
