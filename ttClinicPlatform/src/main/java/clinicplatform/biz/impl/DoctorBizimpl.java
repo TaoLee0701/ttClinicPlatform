@@ -4,6 +4,8 @@ import clinicplatform.biz.DoctorBiz;
 import clinicplatform.entity.*;
 import clinicplatform.mapper.DoctorMapper;
 
+import java.util.List;
+
 import javax.xml.ws.soap.Addressing;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,12 @@ public class DoctorBizimpl implements DoctorBiz {
 		System.out.println(222222);
 		return doctormapper.checkLogin( username,  pwd);
 
+	}
+
+	@Override
+	public List<Doctor> findByHidAndDidOrDoctorPosition(Integer hid, Integer did, String position) {
+		
+		return doctormapper.findByHidAndDidOrDoctorPosition(hid, did, position);
 	}
 
 }

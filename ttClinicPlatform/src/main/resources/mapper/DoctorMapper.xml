@@ -9,4 +9,15 @@
 	select * from doctor where doctor_name=#{username} and doctor_password=#{pwd}
 	</select>
 
+	<select id="findByHidAndDidOrDoctorPosition" parameterType="hashmap" resultType="Doctor">
+		select * from doctor where doctor_id in(
+			select doc_id from hospital_department_doctor where h_id =#{hid}
+			<if test="did!=null and did>0">
+				and de_id=#{did}
+			</if>
+		)
+		<if test="position!=null">
+			and  doctor_position=#{position}
+		</if>
+	</select>
 </mapper>
