@@ -70,7 +70,7 @@
 		},
 		methods : {
 			login(){
-				axios.post('/clinicback/login', {
+				axios.post('/clinicback/check-login', {
 					userName: this.loginName,
 					userPassword: this.userPassword
 				  })

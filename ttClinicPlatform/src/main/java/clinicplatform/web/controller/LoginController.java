@@ -25,10 +25,14 @@ public class LoginController {
 		return "clinicback/..";
 	}
 	
-	
 	@RequestMapping("/login")
+	public String login() {
+		return "clinicback/login";
+	}
+	
+	@RequestMapping("/check-login")
 	@ResponseBody
-	public String login(@RequestBody User user) {
+	public String checkLogin(@RequestBody User user) {
 		Subject subject = SecurityUtils.getSubject();//拿到当前跟程序互交的用户
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getUserPassword());
 		try {

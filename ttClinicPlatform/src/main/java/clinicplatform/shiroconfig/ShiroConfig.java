@@ -48,8 +48,12 @@ public class ShiroConfig {
         // 拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         filterChainDefinitionMap.put("/home/**", "anon");
+        
         filterChainDefinitionMap.put("/ttPlatform/login", "anon");
         filterChainDefinitionMap.put("/ttPlatform/check-login", "anon");
+        
+        filterChainDefinitionMap.put("/clinicback/**", "anon");
+
         filterChainDefinitionMap.put("/doctor/**", "anon");
 
         filterChainDefinitionMap.put("/patient/index", "anon");
