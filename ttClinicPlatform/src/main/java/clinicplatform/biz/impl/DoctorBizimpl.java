@@ -17,7 +17,6 @@ public class DoctorBizimpl implements DoctorBiz {
 	@Autowired
 	private DoctorMapper doctormapper;
 
-	//登录页面
 	@Override
 	public Doctor checkLogin(String username, String pwd) {
 		System.out.println(222222);
@@ -27,7 +26,7 @@ public class DoctorBizimpl implements DoctorBiz {
 
 	@Override
 	public List<Doctor> findByHidAndDidOrDoctorPosition(Integer hid, Integer did, String position) {
-		
+
 		return doctormapper.findByHidAndDidOrDoctorPosition(hid, did, position);
 	}
 

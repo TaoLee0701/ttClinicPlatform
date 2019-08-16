@@ -1,11 +1,8 @@
 package clinicplatform.mapper;
 
-import java.util.List;
-
+import clinicplatform.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import clinicplatform.entity.User;
-
 public interface UserMapper extends BaseMapper<User>{
-	
+
 }

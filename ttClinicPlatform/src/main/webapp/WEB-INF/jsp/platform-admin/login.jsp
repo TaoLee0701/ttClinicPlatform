@@ -58,26 +58,24 @@
         <div class="form">
             <h1>涛涛诊所平台管理登录</h1>
             <div>
-                <Tooltip placement="top" always theme="light" content="用户名不能为空哦！" :disabled="false">
-                    <i-input prefix="ios-contact" v-model="user_name" type="text" clearable placeholder="请输入用户名" style="width: 18.75rem"></i-input>
+                <Tooltip placement="top" always theme="light" content="用户名不能为空哦！" :disabled="userNameIsNull">
+                    <i-input @on-focus="userNameIsNull=true" :readonly="loading" prefix="ios-contact" v-model="userName" type="text" clearable placeholder="请输入用户名" style="width: 18.75rem"></i-input>
                 </Tooltip>
             </div>
             <div>
-                <Tooltip placement="top" always theme="light" content="密码不能为空哦！" :disabled="false">
-                    <i-input prefix="md-calculator" v-model="password" type="password" clearable placeholder="请输入密码" style="width: 300px"></i-input>
+                <Tooltip placement="top" always theme="light" content="密码不能为空哦！" :disabled="passwordIsNull">
+                    <i-input @on-focus="passwordIsNull=true"  :readonly="loading" prefix="md-calculator" v-model="userPassword" type="password" clearable placeholder="请输入密码" style="width: 300px"></i-input>
                 </Tooltip>
             </div>
             <div>
                 <div style="text-align: left;width: 18.75rem;margin: 0 auto;">
                     <Row>
                         <i-col span="20">
-                                <Checkbox v-model="keepPassword">记住密码</Checkbox>
-                                <Checkbox v-model="autoLogin">一周内自动登录</Checkbox>
+                                <Checkbox :disabled="loading" v-model="keepPassword">记住密码</Checkbox>
+                                <Checkbox :disabled="loading" v-model="autoLogin">一周内自动登录</Checkbox>
                         </i-col >
                         <i-col  span="4" @click.native="forgetPassword">忘记密码</i-col >
                     </Row>
-
-                    <%--<span>忘记密码</span>--%>
                 </div>
             </div>
             <div>
@@ -92,23 +90,51 @@
     new Vue({
         el: '#app',
         data: {
-            user_name:'',
-            password:'',
+            userName:'',
+            userPassword:'',
             loading:false,
             keepPassword:false,
-            autoLogin:false
+            autoLogin:false,
+            userNameIsNull:true,
+            passwordIsNull:true
         },
         methods: {
             submit(){
+                this.userNameIsNull=this.userName.length!==0;
+                this.passwordIsNull=this.userPassword.length!==0
+                if(this.userNameIsNull===false||this.passwordIsNull===false){
+                    return
+                }
                 this.loading=true
+                let temp=this
                 console.log("keepPassword",this.keepPassword)
                 console.log("autoLogin",this.autoLogin)
-                location.href="/ttPlatform/login"
+                axios.post('/ttPlatform/check-login', {
+                    userName: this.userName,
+                    userPassword: this.userPassword
+                }).then(function (res) {
+                        console.log(res);
+                        if(res.data.status==='SUCCRESS'){
+                            // temp.$Message.success('验证成功！');
+                            location.href="/ttPlatform/home"
+                        }else if(res.data.status==='NOTRIGHTS'){
+                            temp.$Message.warning('此账号没有权限登录！');
+                        }else if(res.data.status==='DEFEATED'){
+                            temp.$Message.error('用户名或密码有误！');
+                        }
+                    temp.loading=false
+                })
+                // location.href="/ttPlatform/home"
                 // console.log("submit",this.user_name,this.password)
-                this.loading=false
             },
             forgetPassword(){
+                if(this.loading===true){
+                    return
+                }
                 console.log("忘记密码")
+            },
+            verify (){
+
             }
         }
     })
