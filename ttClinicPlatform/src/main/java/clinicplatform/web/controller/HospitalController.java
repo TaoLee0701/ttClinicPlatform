@@ -50,4 +50,10 @@ public class HospitalController {
 		}
 		return "patient/patient-hospital-detail";
 	}
+	
+	@GetMapping("/map/{id}")
+	public String map(@PathVariable("id")Integer id,Model model) {
+		model.addAttribute("hospital", hospitalBiz.fetchById(id));
+		return "patient/patient-hospital-map";
+	}
 }

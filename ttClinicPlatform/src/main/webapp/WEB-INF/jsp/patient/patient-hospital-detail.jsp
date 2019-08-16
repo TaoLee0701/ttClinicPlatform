@@ -64,7 +64,7 @@
 				</yd-cell-item>
 			</yd-cell-group>
 			<yd-cell-group>
-				<yd-cell-item arrow type="a" href="./map.html">
+				<yd-cell-item arrow type="a" href="map/${hospital.hospitalId }">
 					<span slot="left">地址：${hospital.hospitalAddress}</span>
 					<span slot="right" style="color:#3fb5f3;">去这里</span>
 				</yd-cell-item>
@@ -131,27 +131,6 @@
 			
 		}
     });
-	
-	var geoc = new BMap.Geocoder(); //创建一个地址解析器的实例
-	var geolocation = new BMap.Geolocation();
-	geolocation.getCurrentPosition(function(r){
-		if(this.getStatus() == BMAP_STATUS_SUCCESS){
-			var href =$(".yd-cell-item[href]").attr("href");
-			$(".yd-cell-item").attr("href",href+"?lng="+r.point.lng+"&lat="+r.point.lat);
-			var location = $(".yd-cell-item").attr("href");
-			var p1 = new BMap.Point(r.point.lng,r.point.lat);
-			geoc.getLocation(p1, function(rs){
-			var addComp = rs.addressComponents;
-			//rs.address  地址描述
-			alert(addComp.city);
-			//alert("省份"+addComp.province + ", 城市" + addComp.city + ", 区县" + addComp.district + ", 街道" + 
-			//addComp.street + ", 门牌号码" + addComp.streetNumber);
-		}); 
-		}
-		else {
-			alert('failed'+this.getStatus());
-		}        
-	},{enableHighAccuracy: true});
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package clinicplatform.entity;
 
-import static org.assertj.core.api.Assertions.useDefaultDateFormatsOnly;
+
 
 import java.util.List;
 
