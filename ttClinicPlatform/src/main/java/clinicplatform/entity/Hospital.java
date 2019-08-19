@@ -1,15 +1,13 @@
 package clinicplatform.entity;
 
-import static org.assertj.core.api.Assertions.useDefaultDateFormatsOnly;
-
-import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
