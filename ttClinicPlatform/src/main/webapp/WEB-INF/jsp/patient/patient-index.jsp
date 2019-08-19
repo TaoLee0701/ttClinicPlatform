@@ -92,8 +92,10 @@
 <!-- 引入 Vue -->
 <script src="/static/vue/js/vue.js"></script>
 <!-- 引入组件库 -->
+<script src="/static/vue-router/dist/vue-router.js"></script>
 <script src="/static/vue-ydui/dist/ydui.rem.js"></script>
 <script src="/static/axios/axios.min.js"></script>
+
 <script src="/static/jquery/jquery-1.12.4.js"></script>
 <script>
 
@@ -170,10 +172,10 @@
 				});
             },
             itemClickHandler(item) {
+            	//console.log('this.$route',this.$route);
             	if(item.hospitalId!=undefined)
                 	location.href ="/hospital/"+item.hospitalId;
-            	
-                //this.$route.push("/hospital/"+item.hospitalId);
+                	//this.$route.push("/hospital/"+item.hospitalId);
             },
             submitHandler(queryString) {
             	
