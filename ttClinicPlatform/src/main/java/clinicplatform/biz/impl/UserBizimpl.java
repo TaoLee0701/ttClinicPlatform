@@ -1,14 +1,16 @@
 package clinicplatform.biz.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import clinicplatform.biz.UserBiz;
 import clinicplatform.entity.User;
 import clinicplatform.mapper.RoleMapper;
 import clinicplatform.mapper.UserMapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class UserBizimpl implements UserBiz{

@@ -7,7 +7,7 @@
 
 	<select id="fetchByUserRoleId" parameterType="int" resultType="Role">
 		select * from role where role_id in(
-			select r_id from User_Role where u_id=#{uId}
+			select r_id from UserRole where u_id=#{uId}
 		)
 	</select>
 </mapper>
