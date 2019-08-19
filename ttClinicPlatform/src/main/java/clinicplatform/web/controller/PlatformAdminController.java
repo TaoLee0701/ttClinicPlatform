@@ -3,8 +3,8 @@ package clinicplatform.web.controller;
 import clinicplatform.biz.UserBiz;
 import clinicplatform.entity.Role;
 import clinicplatform.entity.User;
-import clinicplatform.response.PlatformResponse;
-import clinicplatform.response.ResponseFinal.ResponseStatus;
+import clinicplatform.response.ResultResponse;
+import clinicplatform.util.ResultVOUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -31,24 +31,20 @@ public class PlatformAdminController {
 
     @PostMapping("/check-login")
     @ResponseBody
-    public PlatformResponse login(@RequestBody User user) {
-        PlatformResponse<User> platformResponse=new PlatformResponse<User>();
+    public ResultResponse login(@RequestBody User user) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getUserPassword());
         try {
             subject.login(token);
             User admin = userBiz.checkUserNameOrUserPhone(user.getUserName());
             if (admin.getRoles().contains(new Role(1, "ttPlatform-admin"))) {
-                subject.getSession().setAttribute("ttadmin",admin);
-                platformResponse.setStatus(ResponseStatus.STATUS_SUCCRESS);
-                platformResponse.setObject(admin);
-            }else{
-                platformResponse.setStatus(ResponseStatus.STATUS_NOT_RIGHTS);
+                subject.getSession().setAttribute("ttadmin", admin);
+                return ResultVOUtil.success(admin);
+            } else {
+                return ResultVOUtil.error("此账号没有权限登录!", 302);
             }
         } catch (AuthenticationException ex) {
-            platformResponse.setStatus(ResponseStatus.STATUS_DEFEATED);
-        }finally {
-            return platformResponse;
+            return ResultVOUtil.error("账号或密码错误!", 500);
         }
     }
 }

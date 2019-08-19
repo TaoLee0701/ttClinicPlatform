@@ -12,6 +12,7 @@
     <meta charset="utf-8">
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="/static/iview/iview/dist/styles/iview.css">
+    <link rel="stylesheet" type="text/css" href="/static/platform-admin/platform-css/main.css">
     <script type="text/javascript" src="/static/vue/js/vue.min.js"></script>
     <script type="text/javascript" src="/static/iview/iview/dist/iview.min.js"></script>
     <script src="/static/axios/axios.min.js"></script>
@@ -23,38 +24,10 @@
             padding: 0;
             background-color: #FDFFFE;
         }
-        .platform-login{
-            height: 20rem;
-            width: 30%;
-            margin: 0 auto;
-            position: relative; /*脱离文档流*/
-            top: 40%; /*偏移*/
-            transform: translateY(-50%);
-
-        }
-        .platform-login>.form{
-            text-align: center;
-            padding: 2rem;
-            border: 1px solid #dcdee2;
-            background-color: #FFFFFF;
-            -moz-box-shadow: 1px 2px 6px #dcdee2; /* 老的 Firefox */
-            box-shadow: 1px 2px 6px #dcdee2;
-        }
-        .platform-login>.form>div{
-            margin: 1rem;
-        }
-        .platform-login>.form>div>button{
-            width: 10rem;
-            border-radius: 2rem;
-        }
-        .platform-login>.form>div>button>span{
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
-    <div id="app" class="platform-login">
+    <div id="paltform-login" class="platform-login">
         <div class="form">
             <h1>涛涛诊所平台管理登录</h1>
             <div>
@@ -72,7 +45,7 @@
                     <Row>
                         <i-col span="20">
                                 <Checkbox :disabled="loading" v-model="keepPassword">记住密码</Checkbox>
-                                <Checkbox :disabled="loading" v-model="autoLogin">一周内自动登录</Checkbox>
+                                <%--<Checkbox :disabled="loading" v-model="autoLogin">一周内自动登录</Checkbox>--%>
                         </i-col >
                         <i-col  span="4" @click.native="forgetPassword">忘记密码</i-col >
                     </Row>
@@ -86,58 +59,6 @@
             </div>
         </div>
     </div>
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            userName:'',
-            userPassword:'',
-            loading:false,
-            keepPassword:false,
-            autoLogin:false,
-            userNameIsNull:true,
-            passwordIsNull:true
-        },
-        methods: {
-            submit(){
-                this.userNameIsNull=this.userName.length!==0;
-                this.passwordIsNull=this.userPassword.length!==0
-                if(this.userNameIsNull===false||this.passwordIsNull===false){
-                    return
-                }
-                this.loading=true
-                let temp=this
-                console.log("keepPassword",this.keepPassword)
-                console.log("autoLogin",this.autoLogin)
-                axios.post('/ttPlatform/check-login', {
-                    userName: this.userName,
-                    userPassword: this.userPassword
-                }).then(function (res) {
-                        console.log(res);
-                        if(res.data.status==='SUCCRESS'){
-                            // temp.$Message.success('验证成功！');
-                            location.href="/ttPlatform/home"
-                        }else if(res.data.status==='NOTRIGHTS'){
-                            temp.$Message.warning('此账号没有权限登录！');
-                        }else if(res.data.status==='DEFEATED'){
-                            temp.$Message.error('用户名或密码有误！');
-                        }
-                    temp.loading=false
-                })
-                // location.href="/ttPlatform/home"
-                // console.log("submit",this.user_name,this.password)
-            },
-            forgetPassword(){
-                if(this.loading===true){
-                    return
-                }
-                console.log("忘记密码")
-            },
-            verify (){
-
-            }
-        }
-    })
-</script>
+    <script type="text/javascript" src="/static/platform-admin/paltform-js/main.js"></script>
 </body>
 </html>

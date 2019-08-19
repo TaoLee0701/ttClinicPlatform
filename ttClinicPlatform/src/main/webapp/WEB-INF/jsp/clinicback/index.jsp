@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>诊所后台管理</title>
 <style scoped>
-    .layout-con{
+    .layout{
         height: 100%;
         width: 100%;
     }
